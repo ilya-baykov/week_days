@@ -14,17 +14,19 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-from days import views as views_days
+from django.urls import path, include
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('week_days/monday', views_days.monday),
-    path('week_days/tuesday', views_days.tuesday),
-    path('week_days/wednesday', views_days.wednesday),
-    path('week_days/thursday', views_days.thursday),
-    path('week_days/friday', views_days.friday),
-    path('week_days/saturday', views_days.saturday),
-    path('week_days/sunday', views_days.sunday),
+    path('week_days/', include('days.url')),
+
+    # path('week_days/monday', views_days.monday),
+    # path('week_days/tuesday', views_days.tuesday),
+    # path('week_days/wednesday', views_days.wednesday),
+    # path('week_days/thursday', views_days.thursday),
+    # path('week_days/friday', views_days.friday),
+    # path('week_days/saturday', views_days.saturday),
+    # path('week_days/sunday', views_days.sunday),
 
 ]
