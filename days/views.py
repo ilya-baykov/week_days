@@ -30,3 +30,4 @@ def saturday(request):
 
 def sunday(request):
     return HttpResponse("Воскресенье  день тяжелый ;с")
+
