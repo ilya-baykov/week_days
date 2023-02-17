@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseNotFound
 
 
 # Create your views here.
@@ -21,4 +21,4 @@ def param(request, param):
     elif param == "sunday":
         return HttpResponse("Воскресенье  день тяжелый ;с")
     else:
-        return HttpResponse("Я не знаю так день недели ((((", param)
+        return HttpResponseNotFound(f"Я не знаю такой день -    {param}")
